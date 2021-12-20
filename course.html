@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/course.css">
+</head>
+<body>
+    <div class="top">
+        <div class="logo">
+            <a href="login.html">MyCourses.com</a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li class="list active">
+                    <a href="index1.html">
+                        <span class="icon home"><ion-icon name="home"></ion-icon></span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="course.html">
+                        <span class="icon book"><ion-icon name="book"></ion-icon></span>
+                        <span class="text">Course</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="video.html">
+                        <span class="icon video"><ion-icon name="videocam"></ion-icon></span>
+                        <span class="text">Video</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon cart"><ion-icon name="cart"></ion-icon></span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="login.html">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <span class="text">Profile</span>
+                    </a>
+                </li>
+                <li class="list elem_search">
+                    <a href="#">
+                        <span class="icon"><ion-icon name="search"></ion-icon></ion-icon></span>
+                        <span class="text">Search</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+
+        </div>
+        <div class="searchbar">
+            <input type="text" class="search">
+            <span class="clear"><ion-icon name="close"></ion-icon></span>
+        </div>
+    </div>
+    <div class="lottie">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_zxadsdst.json"  background="transparent"  speed="1"  style="width: 1100px; height: 450px;"  loop autoplay></lottie-player>
+    </div>
+    <div class="container"></div>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+        const search = document.querySelector('.elem_search');
+        const searchbar = document.querySelector('.searchbar');
+        function activeLink(){
+            searchbar.classList.toggle('active');
+        }
+        search.addEventListener('click',activeLink);
+    </script>
+    <script>
+        let container = document.querySelector('.container');
+        function init2(){
+            for (let i =0; i<10 ; i++){
+                let div = document.createElement('div');
+
+                div.className = 'card';
+                div.innerHTML = `
+                <div class="box">
+                        <div class="content">
+                            <h2>`+(i+1)+`</h2>
+                            <h3>Card Three</h3>
+                            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis, debitis?
+                            </p>
+                            <a href="infor.html">Read More</a>
+                        </div>
+                </div>
+                `
+                container.appendChild(div);
+            }
+            
+        }
+    init2();
+    </script>
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover',activeLink));
+    </script>
+</body>
+</html>
