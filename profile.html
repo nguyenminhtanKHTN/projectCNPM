@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-10 ">
+                <a href="login.html">MyCourses.com</a>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-10 ">
+                    
+                        <ul>
+                            <li class="list active">
+                                <a href="index1.html">
+                                    <span class="icon home"><ion-icon name="home"></ion-icon></span>
+                                    <span class="text">Home</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="course.html" target="_blank">
+                                    <span class="icon book"><ion-icon name="book"></ion-icon></span>
+                                    <span class="text">Course</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="video.html">
+                                    <span class="icon video"><ion-icon name="videocam"></ion-icon></span>
+                                    <span class="text">Video</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#">
+                                    <span class="icon cart"><ion-icon name="cart"></ion-icon></span>
+                                    <span class="text">Cart</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="login.html">
+                                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                                    <span class="text">Profile</span>
+                                </a>
+                            </li>
+                            <li class="list elem_search">
+                                <a href="#">
+                                    <span class="icon"><ion-icon name="search"></ion-icon></ion-icon></span>
+                                    <span class="text">Search</span>
+                                </a>
+                            </li>
+                            <div class="indicator"></div>
+                        </ul>
+                        
+                    <div class="searchbar">
+                        <input type="text" class="search">
+                        <span class="clear"><ion-icon name="close"></ion-icon></span>
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+
+      </div> 
+      <div class="container avatar">
+        <div class="row">
+          <div class="col-sm-1">
+          </div>
+          <div class="col-sm-10">
+            <div class="nightsky"></div>
+              <div class="sun"></div>
+            <div class="cloud one">
+            </div>
+            <div class="cloud two">
+            </div>
+            <div class="cloud three">
+            </div>
+            <div class="cloud four">
+            </div>
+            <h3><ion-icon name="contact"></ion-icon></h3>
+            <h4>Teacher</h4>
+            <h1>Nguyen Van A</h1>
+          </div>
+          <div class="col-sm-1">
+          </div>
+        </div>
+      </div>
+      <div class="container detail">
+        <div class="row">
+          <div class="col-sm-1">
+          </div>
+          <div class="col-sm-10">
+            <nav>
+                <a href="#" class="a_1">About</a>
+               <a href="#" class="a_1">My Course</a>
+            </nav>
+          </div>
+          <div class="col-sm-1">
+          </div>
+        </div>
+    </div>
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+      <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) =>
+        item.addEventListener('mouseover',function(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+
+            var col = document.querySelectorAll('.col-sm-10');
+            var ul = document.querySelector('ul');
+            var style = ul.currentStyle || window.getComputedStyle(ul);
+            var style1 = col[1].currentStyle || window.getComputedStyle(col[1]);
+
+            var ind = document.querySelector('.indicator');
+            var style2 = ind.currentStyle || window.getComputedStyle(ind);
+            
+            
+        }));
+
+    </script>
+        <script>
+            const search = document.querySelector('.elem_search');
+            const searchbar = document.querySelector('.searchbar');
+            function activeLink(){
+                searchbar.classList.toggle('active');
+            }
+            search.addEventListener('click',activeLink);
+        </script>
+    <script>
+        let night = document.querySelector('.nightsky');
+        let moon = document.createElement('div');
+       moon.className = "moon";
+       moon.style.position = 'absolute';
+       moon.style.width = 100+'px';
+       moon.style.height = 100+'px';
+       moon.style.borderRadius = 50+'%';
+       moon.style.background = 'white';
+       moon.style.transition = 0.5+'s';
+        moon.style.animation = "moonnhapnhay 2s infinite linear";
+       moon.style.left = 10+'%';
+       moon.style.top = 20+'%';
+       
+        night.appendChild(moon);
+        for (let i=0;i<150;i++){
+           let div = document.createElement('div');
+           div.className = "star";
+
+           div.style.position = 'absolute';
+           div.style.width = 2+'px';
+           div.style.height = 2+'px';
+           div.style.borderRadius = 50+'%';
+           div.style.background = 'white';
+           div.style.top = Math.floor(Math.random()*100)+'%';
+           div.style.left = Math.floor(Math.random()*100)+'%';
+           div.style.boxShadow = "0 0 0 2px rgba(255,255,255,0.05), 0 0 0 4px rgba(255,255,255,0.1), 0 0 0 20px rgba(255,255,255,255);"
+           div.style.animation = 'nhapnhay '+(Math.floor(Math.random()*3)+2)+'s' + ' infinite linear';
+           night.appendChild(div);
+
+        }
+    </script>
+    <script>
+        const container = document.querySelector('.detail');
+        let a = document.querySelectorAll('.a_1');
+        function addCourse(parent){
+            for( let i=0;i<10;i++){
+                let div = document.createElement('div');
+                div.className = 'row rowCourse';
+                div.innerHTML = `
+                <div class="col-sm-9">
+                    <p>Cousre `+(i+1)+`</p>
+                </div>
+                <div class="col-sm-3">
+                    <div class = "col-sm-6">
+                    <a href = "infor.html">Read more</a>
+                    </div>
+                    <div class = "col-sm-6">
+                    <a href = "#">Delete </a>
+                    </div>
+                </div>
+            `;
+            parent.appendChild(div);
+            }
+        }
+        a[0].addEventListener('click',function(){
+            let rows = container.querySelectorAll('.row');
+            if (rows.length == 1){
+                let div = document.createElement('div');
+            div.className = 'row';
+            div.innerHTML = `
+            <div class="col-sm-1">
+          </div>
+          <div class="col-sm-10">
+               <p> Name: Nguyen Van A </p>
+                <p> Phone Number : 093xxxxxxx </p>
+                <p> Address: TP.HCM </p>
+                <p> Email : NVA@gmail.com </p>
+          </div>
+          <div class="col-sm-1">
+          </div>
+            `;
+            container.appendChild(div);
+            }
+            else{
+                container.removeChild(rows[1]);
+            }
+        });
+
+        a[1].addEventListener('click',function(){
+            let rows = container.querySelectorAll('.row');
+            if (rows.length == 1){
+                let div = document.createElement('div');
+            div.className = 'row';
+            div.innerHTML = `
+            <div class="col-sm-1">
+          </div>
+          <div class="col-sm-10">
+          </div>
+          <div class="col-sm-1">
+          </div>
+            `;
+            container.appendChild(div);
+            addCourse(div);
+            }
+            else{
+                container.removeChild(rows[1]);
+            }
+        });
+
+        let rowCourses = document.querySelectorAll('.rowCourse');
+        rowCourses.forEach((item) =>
+        item.addEventListener('mouseover',function() {
+            var readmore = item.querySelector('.col')
+        })
+        );
+
+        let sun = document.querySelector('.sun');
+        sun.addEventListener('click',function(){
+            sun.style.zIndex = -1;
+            let cloud = document.querySelectorAll('.cloud');
+            cloud.forEach((item)=>
+            item.style.zIndex = -1)
+            document.querySelector('.avatar').style.background = '#000';
+            document.querySelector('.avatar').querySelector('.col-sm-10').style.color = 'white';
+            document.querySelector('.nightsky').style.zIndex = 0;
+        });
+
+        document.querySelector('.nightsky').addEventListener('click',function(){
+            document.querySelector('.nightsky').style.zIndex = -1;
+            document.querySelector('.avatar').style.background = 'radial-gradient(#e0ffff,#87cafa)';
+            document.querySelector('.avatar').querySelector('.col-sm-10').style.color = 'black';
+            document.querySelector('.sun').style.zIndex = 0;
+            let cloud = document.querySelectorAll('.cloud');
+            cloud.forEach((item)=>
+            item.style.zIndex = 0)
+        
+        });
+    </script>
+</body>
+</html>
